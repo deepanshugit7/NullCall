@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-accent-primary: var(--accent-primary);
+  --color-accent-secondary: var(--accent-secondary);
+  --color-glass: var(--glass-bg);
+  --color-glass-border: var(--glass-border);
+  --blur-xs: 2px;
+}
+
+:root {
+  /* HopeRise Dark Theme (Earthy & Warm) */
+  --bg-primary: #1a1614; /* Dark Charcoal */
+  --bg-secondary: #2a241f; /* Deep Earth */
+  --text-primary: #f4ebdd; /* Cream */
+  --text-secondary: #b9a78d; /* Taupe */
+  --accent-primary: #b19c7a; /* Muted Gold */
+  --accent-secondary: #8c7a5f; /* Darker Gold */
+  --glass-bg: rgba(26, 22, 20, 0.7);
+  --glass-border: rgba(177, 156, 122, 0.15);
+}
+
+:root[data-theme="light"] {
+  /* HopeRise Light Theme */
+  --bg-primary: #f4ebdd; /* Cream */
+  --bg-secondary: #eed4ac; /* Soft Peach/Sand */
+  --text-primary: #0d0b09; /* Rich Black */
+  --text-secondary: #5a4434; /* Deep Brown */
+  --accent-primary: #b19c7a; /* Muted Gold */
+  --accent-secondary: #8c7a5f; /* Darker Gold */
+  --glass-bg: rgba(255, 255, 255, 0.6);
+  --glass-border: rgba(90, 68, 52, 0.1);
+}
+
+@layer base {
+  body {
+    @apply bg-bg-primary text-text-primary font-sans antialiased transition-colors duration-300;
+  }
+}
+
+.glass-panel {
+  @apply bg-glass backdrop-blur-xl border border-glass-border rounded-[2rem];
+}
+
+.btn-primary {
+  @apply px-6 py-3 bg-accent-primary hover:bg-accent-secondary text-white font-bold rounded-2xl transition-all active:scale-95 shadow-xl shadow-accent-primary/20;
+}
+
+.btn-danger {
+  @apply px-6 py-3 bg-rose-500 hover:bg-rose-600 text-white font-bold rounded-2xl transition-all active:scale-95 shadow-xl shadow-rose-500/20;
+}
+
+.btn-icon {
+  @apply p-4 bg-glass backdrop-blur-xl border border-glass-border rounded-2xl hover:bg-accent-primary/10 transition-all active:scale-90 text-text-primary;
+}
+
+.sidebar {
+  @apply w-full max-w-sm md:w-80 border-l border-glass-border bg-bg-secondary/50 backdrop-blur-3xl flex flex-col;
+}
+
+.video-container {
+  @apply relative rounded-[2.5rem] overflow-hidden bg-black aspect-video shadow-2xl ring-1 ring-white/10;
+}
+
+.chat-bubble {
+  @apply max-w-[85%] p-4 rounded-2xl text-sm leading-relaxed;
+}
+
+.chat-bubble-me {
+  @apply bg-accent-primary text-white self-end rounded-tr-none shadow-lg shadow-accent-primary/20;
+}
+
+.chat-bubble-them {
+  @apply bg-glass border border-glass-border text-text-primary self-start rounded-tl-none;
+}
