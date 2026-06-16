@@ -26,14 +26,14 @@ Most video call apps ask you to sign up, install software, or trust a company wi
 
 ## Features
 
-- 🎥 **HD Video & Audio** — Up to 1280×720 @ 30fps, straight from your browser
-- 🔗 **Zero-friction rooms** — One click to create, one code to share
-- 💬 **Live in-room chat** — Text alongside video, auto-scrolling
-- 🖥️ **Screen sharing** — Share your whole screen or a specific window, with 60fps capture
-- 📺 **Picture-in-Picture** — Float your own camera in a corner while you work
-- ⛶ **Fullscreen mode** — Go fullscreen when your partner shares their screen
-- 📶 **Connection health monitor** — Live packet-loss and latency badge, auto-downgrades to audio-only if the connection degrades badly
-- 🌗 **Dark / Light mode** — System preference respected, manual toggle available
+- **HD Video & Audio** — Up to 1280×720 @ 30fps, straight from your browser
+- **Zero-friction rooms** — One click to create, one code to share
+- **Live in-room chat** — Text alongside video, auto-scrolling
+- **Screen sharing** — Share your whole screen or a specific window, with 60fps capture
+- **Picture-in-Picture** — Float your own camera in a corner while you work
+- **Fullscreen mode** — Go fullscreen when your partner shares their screen
+- **Connection health monitor** — Live packet-loss and latency badge, auto-downgrades to audio-only if the connection degrades badly
+- **Dark / Light mode** — System preference respected, manual toggle available
 
 ## How It Works
 
