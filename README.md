@@ -1,10 +1,8 @@
-# NullCall 📞
+# NullCall 
 
-> Instant, serverless-feeling video calls — no accounts, no servers storing your data, just a code and a connection.
+Instant, serverless-feeling video calls — no accounts, no servers storing your data, just a code and a connection.
 
 NullCall is a peer-to-peer video chat application built on **WebRTC**. You create a room, share a short code with someone, and within seconds you're face-to-face — HD video, real-time chat, screen sharing, and all. Nothing is recorded. Nothing is stored. When you leave, the room simply disappears.
-
----
 
 ## Languages Used
 
@@ -19,8 +17,6 @@ NullCall is a peer-to-peer video chat application built on **WebRTC**. You creat
 | **JavaScript** | `backend/index.js` | Signaling server (Node.js runtime) |
 | **HTML** | `frontend/index.html` | App shell and Vite entry point |
 | **CSS** | `frontend/src/index.css` | Tailwind base styles, custom design tokens, animations |
-
----
 
 ## Why NullCall?
 
@@ -39,8 +35,6 @@ Most video call apps ask you to sign up, install software, or trust a company wi
 - 📶 **Connection health monitor** — Live packet-loss and latency badge, auto-downgrades to audio-only if the connection degrades badly
 - 🌗 **Dark / Light mode** — System preference respected, manual toggle available
 
----
-
 ## How It Works
 
 ```
@@ -50,13 +44,10 @@ You ─────────────────────────�
       (3) Direct P2P connection established
       (4) Video, audio, and chat flow directly
 ```
-
 1. Both users join the same room ID.
 2. The **signaling server** (Node.js + Socket.IO) relays the WebRTC handshake.
 3. Once connected, all media flows **directly between browsers** — the server is no longer in the path.
 4. When you leave, the room is purged from memory.
-
----
 
 ## Tech Stack
 
@@ -69,8 +60,6 @@ You ─────────────────────────�
 | **Signaling** | Node.js + Express + Socket.IO |
 | **State/Hooks** | Custom React hooks (`useWebRTC`, `useRTCStats`) |
 | **Package manager** | npm |
-
----
 
 ## Project Structure
 
@@ -94,8 +83,6 @@ NullCall/
     │       └── useRTCStats.ts    # Packet loss, latency, audio-only fallback
     └── package.json
 ```
-
----
 
 ## Getting Started
 
@@ -126,7 +113,7 @@ npm run dev        # starts on http://localhost:5173
 3. Share the code with someone else (they paste it into "Join Existing Session").
 4. That's it. You're connected.
 
-> **Tip:** The room URL updates automatically (`?room=abc123`), so you can also just share the full link.
+**Tip:** The room URL updates automatically (`?room=abc123`), so you can also just share the full link.
 
 ---
 
@@ -152,17 +139,9 @@ Update the Socket.IO connection URL in `frontend/src/hooks/useWebRTC.ts`:
 socketRef.current = io('https://your-backend-url.com');
 ```
 
----
-
 ## Limitations & Known Behaviours
 
 - **2 users per room max.** NullCall is designed for 1-on-1 calls. A third person trying to join will be rejected with an error.
 - **No persistent state.** Rooms live in memory. Restarting the server clears all rooms.
 - **STUN only.** The current ICE config uses Google's public STUN servers. For users behind strict NATs or corporate firewalls, a TURN server would improve reliability.
 - **Local network only** by default (if backend is `localhost`). Deploy the backend to a public server for remote calls.
-
----
-
-## License
-
-MIT — do whatever you want with it.
