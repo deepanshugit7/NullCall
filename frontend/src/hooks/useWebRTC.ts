@@ -237,9 +237,8 @@ export const useWebRTC = (roomId: string) => {
         const stream = await navigator.mediaDevices.getDisplayMedia({
           video: {
             displaySurface: 'monitor',
-            cursor: 'always',
             frameRate: { ideal: 60 }
-          },
+          } as MediaTrackConstraints,
           audio: true
         });
         
