@@ -116,7 +116,8 @@ export const useWebRTC = (roomId: string) => {
   useEffect(() => {
     if (!roomId || !isMediaReady) return;
 
-    socketRef.current = io('http://localhost:3001');
+    const backendUrl = import.meta.env.VITE_BACKEND_URL || 'http://localhost:3001';
+    socketRef.current = io(backendUrl);
 
     socketRef.current.on('connect', () => {
       socketRef.current?.emit('join-room', roomId);
